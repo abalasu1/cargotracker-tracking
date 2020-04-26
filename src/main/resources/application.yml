@@ -14,7 +14,7 @@ spring:
           contentType: 'application/json'                                                   
                     
   datasource:
-    url: "jdbc:mysql://mysql.cargotracker-db:3306/trackingmsdb?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=EST"
+    url: "jdbc:mysql://tracking-db-svc.cargotracker-tracking:3306/trackingmsdb?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=EST"
     username: trackingmsdb
     password: trackingmsdb
   rabbitmq:
