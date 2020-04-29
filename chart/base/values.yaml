@@ -40,8 +40,8 @@ vcsInfo:
   repoUrl: "https://github.com/abalasu1/cargotracker-tracking.git"
   branch: "master"
 
-partOf: "tracking-db"
+partOf: "cargotracker-backend"
 
-connectsTo: "cargotracker-backend"
+connectsTo: "tracking-db, rabbitmq"
 
 runtime: spring
