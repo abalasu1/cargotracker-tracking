@@ -14,11 +14,11 @@ spring:
           contentType: 'application/json'                                                   
                     
   datasource:
-    url: "jdbc:mysql://tracking-db-svc.cargotracker-db:3306/trackingmsdb?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=EST"
+    url: "jdbc:mysql://tracking-db-svc:3306/trackingmsdb?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=EST"
     username: trackingmsdb
     password: trackingmsdb
   rabbitmq:
-    host: rabbitmq-headless.cargotracker-mq
+    host: rabbitmq-headless
     port: 5672
     username: guest
     password: guest
