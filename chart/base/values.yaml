@@ -56,6 +56,6 @@ vcsInfo:
 
 partOf: "cargotracker-backend-dev"
 
-connectsTo: "mysql-dev, rabbitmq"
+connectsTo: "mysql-dev, rabbitmq-dev"
 
 runtime: spring
