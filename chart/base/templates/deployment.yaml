@@ -61,6 +61,48 @@ spec:
               value: ""
             - name: LOG_LEVEL
               value: {{ .Values.logLevel | quote }}
+            - name: SPRING_PROFILES_ACTIVE
+              value: {{ .Values.profiles.active | quote }}
+            - name: trackingdb.user.name
+              valueFrom:
+                secretKeyRef:
+                  name: cargotracker-tracking-credentials
+                  key: trackingdb.user.name
+            - name: trackingdb.user.password
+              valueFrom:
+                secretKeyRef:
+                  name: cargotracker-tracking-credentials
+                  key: trackingdb.user.password
+            - name: rabbitmq.user.name
+              valueFrom:
+                secretKeyRef:
+                  name: cargotracker-tracking-credentials
+                  key: rabbitmq.user.name
+            - name: rabbitmq.user.password
+              valueFrom:
+                secretKeyRef:
+                  name: cargotracker-tracking-credentials
+                  key: rabbitmq.user.password 
+            - name: rabbitmq.user.password
+              valueFrom:
+                secretKeyRef:
+                  name: cargotracker-tracking-credentials
+                  key: rabbitmq.user.password
+            - name: trackingdburl
+              valueFrom:
+                configMapKeyRef:
+                  name: tracking-config
+                  key: trackingdburl
+            - name: rabbitmqhost
+              valueFrom:
+                configMapKeyRef:
+                  name: tracking-config
+                  key: rabbitmqhost
+            - name: rabbitmqport
+              valueFrom:
+                configMapKeyRef:
+                  name: tracking-config
+                  key: rabbitmqport
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
